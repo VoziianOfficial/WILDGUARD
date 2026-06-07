@@ -1,0 +1,113 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>WILDGUARD Favicon</title>
+
+    <defs>
+        <linearGradient id="wgShield" x1="12" y1="5" x2="52" y2="60" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#21362E"/>
+            <stop offset="48%" stop-color="#0E1713"/>
+            <stop offset="100%" stop-color="#050706"/>
+        </linearGradient>
+
+        <linearGradient id="wgEdge" x1="13" y1="6" x2="51" y2="59" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#7DDB83"/>
+            <stop offset="52%" stop-color="#5FBF6B"/>
+            <stop offset="100%" stop-color="#1F5A49"/>
+        </linearGradient>
+
+        <linearGradient id="wgFur" x1="18" y1="19" x2="47" y2="48" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#F6FAF4"/>
+            <stop offset="55%" stop-color="#CAD4CB"/>
+            <stop offset="100%" stop-color="#89938D"/>
+        </linearGradient>
+
+        <filter id="wgGlow" x="4" y="2" width="56" height="62" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#5FBF6B" flood-opacity="0.35"/>
+            <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/>
+        </filter>
+    </defs>
+
+    <rect width="64" height="64" rx="16" fill="#070908"/>
+
+    <g filter="url(#wgGlow)">
+        <path
+            d="M32 5L52 13.5V29.5C52 44.5 43.5 55 32 61C20.5 55 12 44.5 12 29.5V13.5L32 5Z"
+            fill="url(#wgShield)"
+            stroke="url(#wgEdge)"
+            stroke-width="2.4"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M18.5 31.5C18.5 23.5 24.2 18.2 32 18.2C39.8 18.2 45.5 23.5 45.5 31.5C45.5 40 39.8 46.8 32 46.8C24.2 46.8 18.5 40 18.5 31.5Z"
+            fill="#19231E"
+        />
+
+        <path
+            d="M18.8 29.6L14.9 20.6L25.1 23.2L23.3 34.4L18.8 29.6Z"
+            fill="#070908"
+            stroke="#DCE5DD"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M45.2 29.6L49.1 20.6L38.9 23.2L40.7 34.4L45.2 29.6Z"
+            fill="#070908"
+            stroke="#DCE5DD"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M18.5 34.2C22.5 27.8 27.1 26.3 32 29.9C36.9 26.3 41.5 27.8 45.5 34.2C41.5 40.3 36.4 40.5 32 35.9C27.6 40.5 22.5 40.3 18.5 34.2Z"
+            fill="#030504"
+        />
+
+        <path
+            d="M21.2 31.8C24.5 28.2 28.4 28.2 31.1 30.4C27.2 32.9 23.8 33.5 21.2 31.8Z"
+            fill="#F5FAF4"
+        />
+
+        <path
+            d="M42.8 31.8C39.5 28.2 35.6 28.2 32.9 30.4C36.8 32.9 40.2 33.5 42.8 31.8Z"
+            fill="#F5FAF4"
+        />
+
+        <circle cx="26.2" cy="32" r="1.4" fill="#030504"/>
+        <circle cx="37.8" cy="32" r="1.4" fill="#030504"/>
+
+        <circle cx="26.2" cy="31.7" r="0.45" fill="#7DDB83"/>
+        <circle cx="37.8" cy="31.7" r="0.45" fill="#7DDB83"/>
+
+        <path
+            d="M25.4 38.7C26.9 35.2 29.4 33.7 32 33.7C34.6 33.7 37.1 35.2 38.6 38.7C37.8 43.3 35 45.5 32 45.5C29 45.5 26.2 43.3 25.4 38.7Z"
+            fill="url(#wgFur)"
+        />
+
+        <path
+            d="M28.5 38.2C29.1 36.4 30.5 35.6 32 35.6C33.5 35.6 34.9 36.4 35.5 38.2C35.1 40.5 33.6 41.5 32 41.5C30.4 41.5 28.9 40.5 28.5 38.2Z"
+            fill="#030504"
+        />
+
+        <path
+            d="M32 41.3V43.5"
+            stroke="#050706"
+            stroke-width="1.3"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M29.4 43.5C30.3 44.2 31.2 44.5 32 44.5C32.8 44.5 33.7 44.2 34.6 43.5"
+            stroke="#050706"
+            stroke-width="1.3"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M21.4 47.7C24.5 52.2 28.5 55.2 32 56.9C35.5 55.2 39.5 52.2 42.6 47.7"
+            stroke="#7DDB83"
+            stroke-width="2"
+            stroke-linecap="round"
+        />
+    </g>
+</svg>
