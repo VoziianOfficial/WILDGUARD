@@ -1008,3 +1008,31 @@
 .home-service-card__arrow {
     margin-bottom: 8px;
 }
+
+.home-rooflines__grid {
+    grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1fr);
+    gap: 68px;
+}
+
+.home-rooflines__photo {
+    width: min(100%, 430px);
+    justify-self: center;
+}
+
+@media (max-width: 1024px) {
+    .home-rooflines__grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .home-rooflines__photo {
+        width: min(100%, 390px);
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-rooflines__photo {
+        width: min(100%, 320px);
+    }
+}

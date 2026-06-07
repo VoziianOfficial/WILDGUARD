@@ -451,7 +451,7 @@
 }
 
 .is-image-missing::after {
-    content: "Image placeholder";
+    content: "";
     position: relative;
     z-index: 3;
     color: rgba(247, 250, 245, 0.68);
