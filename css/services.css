@@ -949,7 +949,6 @@
     }
 }
 
-/* Services page: equal photo card and text card size */
 .services-list .service-block,
 .services-list .service-block--reverse {
     display: grid !important;
@@ -1234,7 +1233,6 @@
     }
 }
 
-/* Protect areas split section: full width + lower height */
 .protect-areas--split {
     width: 100vw;
     margin-left: calc(50% - 50vw);
@@ -1539,7 +1537,6 @@
     }
 }
 
-/* Mobile redesign for Entry Points section */
 @media (max-width: 767px) {
     .entry-points {
         padding-top: 44px;
@@ -1630,7 +1627,6 @@
     }
 }
 
-/* Mobile redesign for Issue Finder: horizontal swipe cards */
 @media (max-width: 767px) {
     .issue-strip {
         padding-top: 42px;
