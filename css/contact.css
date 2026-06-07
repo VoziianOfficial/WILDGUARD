@@ -434,3 +434,32 @@
         padding: 22px;
     }
 }
+
+.contact-faq .faq-grid--columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+}
+
+.contact-faq .faq-column {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+}
+
+.contact-faq .faq-item {
+    align-self: start;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .contact-faq .faq-grid--columns {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .contact-faq .faq-column {
+        gap: 14px;
+    }
+}
