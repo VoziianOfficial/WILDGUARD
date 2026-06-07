@@ -1538,3 +1538,94 @@
         padding-right: 58px;
     }
 }
+
+/* Mobile redesign for Entry Points section */
+@media (max-width: 767px) {
+    .entry-points {
+        padding-top: 44px;
+        padding-bottom: 44px;
+    }
+
+    .entry-points__grid {
+        gap: 24px;
+    }
+
+    .entry-points__grid .section-heading {
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .entry-points__grid .section-kicker {
+        justify-content: center;
+    }
+
+    .entry-points__grid .section-heading p {
+        max-width: 340px;
+        margin-inline: auto;
+    }
+
+    .entry-points__scheme {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .entry-points__scheme::before {
+        display: none;
+    }
+
+    .entry-point {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+        align-content: center;
+        padding: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(31, 90, 73, 0.16);
+        border-radius: 24px;
+        background:
+            radial-gradient(circle at 82% 18%, rgba(95, 191, 107, 0.18), transparent 38%),
+            rgba(255, 255, 255, 0.72);
+        text-align: left;
+        box-shadow: 0 16px 42px rgba(24, 32, 28, 0.08);
+    }
+
+    .entry-point::before {
+        content: "";
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        width: 30px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--gradient-green);
+    }
+
+    .entry-point .svg-icon {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 38px;
+        height: 38px;
+        margin: 0;
+        color: var(--color-green-cold);
+        filter: drop-shadow(0 0 12px rgba(95, 191, 107, 0.18));
+    }
+
+    .entry-point strong {
+        max-width: 112px;
+        color: var(--color-dark-text);
+        font-size: 14px;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+    }
+
+    .entry-point:hover {
+        transform: translateY(-3px);
+        background:
+            radial-gradient(circle at 82% 18%, rgba(95, 191, 107, 0.24), transparent 40%),
+            var(--color-white);
+    }
+}
