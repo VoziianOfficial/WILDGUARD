@@ -348,12 +348,7 @@
     }
 
     .legal-meta {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .legal-meta span {
-        width: 100%;
+        display: none;
     }
 }
 
