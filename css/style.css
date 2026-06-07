@@ -1056,7 +1056,6 @@ h4 {
 .shine-card,
 .photo-card,
 .final-cta,
-.footer-cta,
 .mini-service-link {
     position: relative;
     overflow: hidden;
@@ -1066,7 +1065,6 @@ h4 {
 .shine-card::before,
 .photo-card::before,
 .final-cta::before,
-.footer-cta::before,
 .mini-service-link::before {
     content: "";
     position: absolute;
@@ -1084,7 +1082,6 @@ h4 {
 .shine-card:hover::before,
 .photo-card:hover::before,
 .final-cta:hover::before,
-.footer-cta:hover::before,
 .mini-service-link:hover::before {
     opacity: 1;
     transform: translateX(80%) skewX(-18deg);
@@ -1516,43 +1513,6 @@ h4 {
     color: var(--color-text);
 }
 
-.footer-cta {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 24px;
-    min-height: 168px;
-    margin-bottom: 42px;
-    padding: 30px;
-    border: 1px solid rgba(125, 219, 131, 0.2);
-    border-radius: var(--radius-lg);
-    background:
-        linear-gradient(90deg, rgba(7, 9, 8, 0.96), rgba(7, 9, 8, 0.75), rgba(7, 9, 8, 0.92)),
-        url("../assets/images/cta-wildlife.jpg"),
-        var(--color-charcoal);
-    background-size: cover;
-    background-position: center;
-    box-shadow: var(--shadow-soft);
-}
-
-.footer-cta__content {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 22px;
-}
-
-.footer-cta h2 {
-    margin-bottom: 8px;
-    font-size: clamp(1.5rem, 3vw, 2.3rem);
-}
-
-.footer-cta p {
-    max-width: 620px;
-    margin: 0;
-    color: rgba(247, 250, 245, 0.78);
-}
-
 .site-brand--footer .brand-mark {
     width: 62px;
     height: 62px;
@@ -1969,12 +1929,10 @@ h4 {
         display: none;
     }
 
-    .footer-cta,
     .final-cta__inner {
         grid-template-columns: 1fr;
     }
 
-    .footer-cta .button,
     .final-cta .button {
         width: fit-content;
     }
@@ -2143,19 +2101,6 @@ h4 {
     }
 
     .final-cta .button {
-        width: 100%;
-    }
-
-    .footer-cta {
-        min-height: auto;
-        padding: 24px;
-    }
-
-    .footer-cta__content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-cta .button {
         width: 100%;
     }
 

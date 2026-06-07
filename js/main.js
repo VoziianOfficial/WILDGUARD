@@ -484,27 +484,6 @@
         return `
             <footer class="site-footer">
                 <div class="container">
-                    <div class="footer-cta">
-                        <div class="footer-cta__content">
-                            <a class="site-brand site-brand--footer" href="index.html" aria-label="${config.company.name} home">
-                                ${renderLogo()}
-                                <span class="site-brand__text">
-                                    <span>WILD</span><strong>GUARD</strong>
-                                </span>
-                            </a>
-
-                            <div>
-                                <h2>Compare Wildlife Removal Providers With Confidence</h2>
-                                <p>Explore local provider options and compare wildlife removal, exclusion, and property protection categories.</p>
-                            </div>
-                        </div>
-
-                        <a class="button button--primary" href="contact.html#contact-form">
-                            <span>Start Comparing</span>
-                            ${renderIcon('arrow')}
-                        </a>
-                    </div>
-
                     <div class="site-footer__grid">
                         <div class="site-footer__brand">
                             <a class="site-brand site-brand--footer-small" href="index.html" aria-label="${config.company.name} home">
