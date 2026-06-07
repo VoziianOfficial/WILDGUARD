@@ -620,3 +620,59 @@
         animation: none;
     }
 }
+
+.about-faq {
+    background:
+        radial-gradient(circle at 10% 18%, rgba(95, 191, 107, 0.1), transparent 30%),
+        radial-gradient(circle at 90% 82%, rgba(31, 90, 73, 0.1), transparent 34%),
+        #D6E3D2;
+}
+
+.about-faq .section-heading h2,
+.about-faq .section-heading p {
+    color: var(--color-dark-text);
+}
+
+.about-faq .section-heading>p:not(.section-kicker) {
+    color: rgba(24, 32, 28, 0.68);
+}
+
+.about-faq .faq-grid--columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+}
+
+.about-faq .faq-column {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+}
+
+.about-faq .faq-item {
+    align-self: start;
+    height: auto;
+    background: rgba(255, 255, 255, 0.62);
+    border-color: rgba(24, 32, 28, 0.1);
+    box-shadow: 0 16px 44px rgba(24, 32, 28, 0.08);
+}
+
+.about-faq .faq-item__button {
+    color: var(--color-dark-text);
+}
+
+.about-faq .faq-item__panel p {
+    color: rgba(24, 32, 28, 0.68);
+}
+
+@media (max-width: 767px) {
+    .about-faq .faq-grid--columns {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .about-faq .faq-column {
+        gap: 14px;
+    }
+}
