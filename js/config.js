@@ -3,6 +3,7 @@
 window.SITE_CONFIG = {
     company: {
         name: 'WILDGUARD',
+        logoSplitIndex: 4,
         companyId: 'WGD-WR-4827',
         phoneRaw: '+18885550192',
         phoneDisplay: '(888) 555-0192',

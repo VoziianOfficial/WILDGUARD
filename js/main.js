@@ -278,6 +278,23 @@
         `;
     }
 
+
+    function renderBrandText() {
+        const company = config.company || {};
+        const name = String(company.name || 'WILDGUARD').trim();
+
+        const splitIndex = Number.isInteger(company.logoSplitIndex)
+            ? company.logoSplitIndex
+            : Math.ceil(name.length / 2);
+
+        const firstPart = name.slice(0, splitIndex);
+        const secondPart = name.slice(splitIndex);
+
+        return `
+        <span>${firstPart}</span><strong>${secondPart}</strong>
+    `;
+    }
+
     function setText(selector, value) {
         qsa(selector).forEach((element) => {
             element.textContent = value || '';
@@ -296,6 +313,95 @@
         const phoneHref = company.phoneRaw ? `tel:${company.phoneRaw}` : '#';
         const emailHref = company.email ? `mailto:${company.email}` : '#';
 
+        const originalCompany = {
+            name: 'WILDGUARD',
+            companyId: 'WGD-WR-4827',
+            phoneRaw: '+18885550192',
+            phoneDisplay: '(888) 555-0192',
+            email: 'hello@wildguardcompare.com',
+            address: '1846 Cedar Ridge Parkway, Denver, CO 80202, USA',
+            serviceArea: 'United States'
+        };
+
+        const replacePairs = [
+            [originalCompany.name, company.name],
+            [originalCompany.companyId, company.companyId],
+            [originalCompany.phoneRaw, company.phoneRaw],
+            [originalCompany.phoneDisplay, company.phoneDisplay],
+            [originalCompany.email, company.email],
+            [originalCompany.address, company.address],
+            [originalCompany.serviceArea, company.serviceArea]
+        ];
+
+        function replaceString(value) {
+            if (!value || typeof value !== 'string') {
+                return value;
+            }
+
+            let nextValue = value;
+
+            replacePairs.forEach(([from, to]) => {
+                if (from && to && from !== to) {
+                    nextValue = nextValue.split(from).join(to);
+                }
+            });
+
+            return nextValue;
+        }
+
+        function replaceTextNodes(root) {
+            const walker = document.createTreeWalker(
+                root,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        const parent = node.parentElement;
+
+                        if (!parent) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+
+                        if (parent.closest('script, style, svg, noscript')) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+
+            const textNodes = [];
+
+            while (walker.nextNode()) {
+                textNodes.push(walker.currentNode);
+            }
+
+            textNodes.forEach((node) => {
+                node.nodeValue = replaceString(node.nodeValue);
+            });
+        }
+
+        function replaceAttributes() {
+            const attributes = ['href', 'title', 'aria-label', 'alt', 'content', 'placeholder', 'value'];
+
+            qsa('*').forEach((element) => {
+                attributes.forEach((attribute) => {
+                    if (element.hasAttribute(attribute)) {
+                        element.setAttribute(attribute, replaceString(element.getAttribute(attribute)));
+                    }
+                });
+            });
+        }
+
+        replaceTextNodes(document.body);
+        replaceAttributes();
+
+        document.title = replaceString(document.title);
+
+        qsa('meta[content]').forEach((meta) => {
+            meta.setAttribute('content', replaceString(meta.getAttribute('content')));
+        });
+
         setText('[data-company-name]', company.name);
         setText('[data-company-id]', company.companyId);
         setText('[data-phone-display]', company.phoneDisplay);
@@ -308,6 +414,14 @@
 
         setHref('[data-phone-link]', phoneHref);
         setHref('[data-email-link]', emailHref);
+
+        qsa('a[href^="tel:"]').forEach((link) => {
+            link.setAttribute('href', phoneHref);
+        });
+
+        qsa('a[href^="mailto:"]').forEach((link) => {
+            link.setAttribute('href', emailHref);
+        });
 
         qsa('[data-logo]').forEach((element) => {
             element.innerHTML = renderLogo();
@@ -325,6 +439,7 @@
 
         qsa('[data-icon]').forEach((element) => {
             const name = element.getAttribute('data-icon');
+
             if (!element.hasAttribute('data-icon-ready')) {
                 element.innerHTML = getIcon(name);
                 element.setAttribute('data-icon-ready', 'true');
@@ -387,7 +502,7 @@
                     <a class="site-brand" href="index.html" aria-label="${config.company.name} home">
                         ${renderLogo()}
                         <span class="site-brand__text">
-                            <span>WILD</span><strong>GUARD</strong>
+                            ${renderBrandText()}
                         </span>
                     </a>
 
@@ -419,7 +534,7 @@
                         <a class="site-brand site-brand--mobile" href="index.html" aria-label="${config.company.name} home">
                             ${renderLogo()}
                             <span class="site-brand__text">
-                                <span>WILD</span><strong>GUARD</strong>
+                                ${renderBrandText()}
                             </span>
                         </a>
 
@@ -489,7 +604,7 @@
                             <a class="site-brand site-brand--footer-small" href="index.html" aria-label="${config.company.name} home">
                                 ${renderLogo()}
                                 <span class="site-brand__text">
-                                    <span>WILD</span><strong>GUARD</strong>
+                                    ${renderBrandText()}
                                 </span>
                             </a>
 
