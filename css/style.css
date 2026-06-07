@@ -481,12 +481,19 @@ h4 {
 }
 
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 900;
     width: 100%;
     padding: 12px 0;
     pointer-events: none;
+}
+
+[data-site-header] {
+    position: relative;
+    z-index: 900;
 }
 
 .site-header__shell {
