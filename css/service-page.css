@@ -662,3 +662,33 @@
         display: none;
     }
 }
+
+.service-faq .faq-grid--columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+}
+
+.service-faq .faq-column {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+    min-width: 0;
+}
+
+.service-faq .faq-item {
+    align-self: start;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .service-faq .faq-grid--columns {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .service-faq .faq-column {
+        gap: 14px;
+    }
+}

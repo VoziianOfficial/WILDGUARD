@@ -255,8 +255,44 @@
         document.head.appendChild(preload);
     }
 
+    function initServiceFaqColumns() {
+        const faqGrids = document.querySelectorAll('.service-faq .faq-grid[data-accordion]');
+
+        faqGrids.forEach((grid) => {
+            if (grid.classList.contains('faq-grid--columns') || grid.querySelector('.faq-column')) {
+                return;
+            }
+
+            const items = Array.from(grid.children).filter((child) => {
+                return child.hasAttribute('data-accordion-item');
+            });
+
+            if (!items.length) {
+                return;
+            }
+
+            const leftColumn = document.createElement('div');
+            const rightColumn = document.createElement('div');
+
+            leftColumn.className = 'faq-column';
+            rightColumn.className = 'faq-column';
+
+            items.forEach((item, index) => {
+                if (index % 2 === 0) {
+                    leftColumn.appendChild(item);
+                } else {
+                    rightColumn.appendChild(item);
+                }
+            });
+
+            grid.classList.add('faq-grid--columns');
+            grid.append(leftColumn, rightColumn);
+        });
+    }
+
     function bootServicePage() {
         initServicePageImagePreload();
+        initServiceFaqColumns();
         initServiceFaqSchema();
         initServiceHeroImageFallback();
         initServiceImageFallbacks();
