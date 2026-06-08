@@ -764,7 +764,6 @@
     .contact-next-step {
         position: relative;
         display: block !important;
-        min-height: 150px;
         padding: 24px 92px 24px 22px !important;
         text-align: left;
     }
