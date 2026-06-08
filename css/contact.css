@@ -725,3 +725,37 @@
     }
 }
 
+.contact-form-layout {
+    align-items: start;
+}
+
+.contact-side-card {
+    align-self: start;
+    height: auto;
+}
+
+.contact-side-card__photo {
+    position: relative;
+    height: 580px;
+    min-height: 0 !important;
+    overflow: hidden;
+}
+
+.contact-side-card__photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 0 !important;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .contact-side-card__photo {
+        height: 220px;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-side-card__photo {
+        height: 190px;
+    }
+}
